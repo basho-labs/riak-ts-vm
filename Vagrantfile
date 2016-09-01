@@ -14,8 +14,6 @@ Vagrant.configure(2) do |config|
      vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
   end
   
-
-  config.vm.provision "shell", path: "scripts/vars.sh"
   config.vm.provision "shell", path: "scripts/setup-ubuntu.sh"
   config.vm.provision "shell", path: "scripts/setup-java.sh"
   config.vm.provision "shell", path: "scripts/setup-python.sh"
