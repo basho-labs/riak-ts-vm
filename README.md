@@ -1,4 +1,4 @@
-* Self contained Riak TS virtual machine with additional tooling
+# Self contained Riak TS virtual machine with additional tooling
 
 This installation and configration is meant to be used as a quick start development environment for Riak TS in a low cpu/low memory virtual machine. It is specifically configured to operate as a single, non-clustered instance.  Riak, by design, is meant to be deployed as a cluster. This specific configuration should not be used for benchmarking and certainly not in production. The virtual machine includes a number of languages, tools and Spark to get you started.
 
