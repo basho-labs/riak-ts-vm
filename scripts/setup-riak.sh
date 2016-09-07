@@ -31,6 +31,7 @@ grep -q -F 'SPARKCLASSPATH=/home/vagrant/spark-riak-connector' /etc/profile || s
 source /etc/profile
 export PATH=$PATH:$SPARKCLASSPATH/bin
 
+sudo chown -Rv vagrant:vagrant /home/vagrant/spark-riak-connector
 
 #set path in /etc/profile
 echo "Set PATH"
