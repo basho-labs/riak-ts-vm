@@ -16,12 +16,11 @@ grep -q -F 'buckets.default.n_val = 1' ${RIAK_CONF} || sudo echo 'buckets.defaul
 echo "Riak TS: Set ring_size = 8"
 grep -q -F 'ring_size = 8' ${RIAK_CONF} || sudo echo 'ring_size = 8' >> ${RIAK_CONF}
 
-echo "Riak TS: Set leveldb.limited_developer_mem = true"
-grep -q -F 'leveldb.limited_developer_mem = true' ${RIAK_CONF} || sudo echo 'leveldb.limited_developer_mem = true' >> ${RIAK_CONF}
+echo "Riak TS: Set leveldb.limited_developer_mem = on"
+grep -q -F 'leveldb.limited_developer_mem = on' ${RIAK_CONF} || sudo echo 'leveldb.limited_developer_mem = on' >> ${RIAK_CONF}
 
 echo "Riak TS: Set leveldb.threads = 7"
 grep -q -F 'leveldb.threads = 7' ${RIAK_CONF} || sudo echo 'leveldb.threads = 7' >> ${RIAK_CONF}
-
 
 #get riak spark connector
 echo "Install Riak Spark Connector"
