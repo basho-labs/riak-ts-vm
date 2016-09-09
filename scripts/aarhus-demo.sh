@@ -19,7 +19,7 @@ pip install -r requirements.txt
 echo "Unzipping demo data"
 unzip -n demo-data-extract.csv.zip
 
-export SPARK_CLASSPATH=/home/vagrant/spark-riak-connector
+export SPARK_CLASSPATH=/home/vagrant/spark-riak-connector/spark-riak-connector-1.5.1-uber.jar
 export SPARK_HOME=/usr/local/src/spark/spark-2.0.0-bin-hadoop2.7
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 

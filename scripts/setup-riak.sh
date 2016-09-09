@@ -26,14 +26,14 @@ grep -q -F 'leveldb.threads = 7' ${RIAK_CONF} || sudo echo 'leveldb.threads = 7'
 echo "Install Riak Spark Connector"
 sudo mkdir -p /home/vagrant/spark-riak-connector
 sudo wget -nc -nv https://bintray.com/artifact/download/basho/data-platform/com/basho/riak/spark-riak-connector/${RIAK_SPARK_CONNECTOR_VERSION}/spark-riak-connector-${RIAK_SPARK_CONNECTOR_VERSION}-uber.jar -P /home/vagrant/spark-riak-connector/
-grep -q -F 'SPARKCLASSPATH=/home/vagrant/spark-riak-connector' /etc/profile || sudo echo "SPARKCLASSPATH=/home/vagrant/spark-riak-connector" >> /etc/profile
+grep -q -F 'SPARK_CLASSPATH=/home/vagrant/spark-riak-connector/spark-riak-connector-${RIAK_SPARK_CONNECTOR_VERSION}-uber.jar' /etc/profile || sudo echo "SPARK_CLASSPATH=/home/vagrant/spark-riak-connectorspark-riak-connector-${RIAK_SPARK_CONNECTOR_VERSION}-uber.jar" >> /etc/profile
 source /etc/profile
-export PATH=$PATH:$SPARKCLASSPATH/bin
+export PATH=$PATH:$SPARK_CLASSPATH/bin
 
 sudo chown -Rv vagrant:vagrant /home/vagrant/spark-riak-connector
 
 #set path in /etc/profile
 echo "Set PATH"
-sudo echo "PATH=$PATH:$SPARK_HOME/bin:$SPARKCLASSPATH/bin:$SCALA_HOME/bin:$JAVA_HOME/bin" >> /etc/profile
+sudo echo "PATH=$PATH:$SPARK_HOME/bin:$SCALA_HOME/bin:$JAVA_HOME/bin" >> /etc/profile
 source /etc/profile
 echo $PATH
