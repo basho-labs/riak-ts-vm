@@ -21,6 +21,6 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", path: "scripts/setup-scala.sh"
   config.vm.provision "shell", path: "scripts/setup-spark.sh"
   config.vm.provision "shell", path: "scripts/setup-riak.sh"
-  config.vm.provision "shell", path: "scripts/aarhus-demo.sh"
+  config.vm.provision "shell", path: "scripts/setup-aarhus-demo.sh"
 
 end
