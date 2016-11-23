@@ -26,7 +26,8 @@ grep -q -F 'leveldb.threads = 7' ${RIAK_CONF} || sudo echo 'leveldb.threads = 7'
 echo "Install Riak Spark Connector"
 sudo mkdir -p /home/vagrant/spark-riak-connector
 sudo wget -nc -nv https://bintray.com/artifact/download/basho/data-platform/com/basho/riak/spark-riak-connector/${RIAK_SPARK_CONNECTOR_VERSION}/spark-riak-connector-${RIAK_SPARK_CONNECTOR_VERSION}-uber.jar -P /home/vagrant/spark-riak-connector/
-grep -q -F 'SPARK_CLASSPATH=/home/vagrant/spark-riak-connector/spark-riak-connector-${RIAK_SPARK_CONNECTOR_VERSION}-uber.jar' /etc/profile || sudo echo "SPARK_CLASSPATH=/home/vagrant/spark-riak-connectorspark-riak-connector-${RIAK_SPARK_CONNECTOR_VERSION}-uber.jar" >> /etc/profile
+grep -q -F 'SPARK_CLASSPATH=/home/vagrant/spark-riak-connector/spark-riak-connector-${RIAK_SPARK_CONNECTOR_VERSION}-uber.jar' /etc/profile || sudo echo "SPARK_CLASSPATH=/home/vagrant/spark-riak-connector/spark-riak-connector-${RIAK_SPARK_CONNECTOR_VERSION}-uber.jar" >> /etc/profile
+grep -q -F 'export SPARK_CLASSPATH' /etc/profile || sudo echo "export SPARK_CLASSPATH" >> /etc/profile
 source /etc/profile
 export PATH=$PATH:$SPARK_CLASSPATH/bin
 

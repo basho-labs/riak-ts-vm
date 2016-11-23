@@ -8,10 +8,10 @@ git clone https://github.com/siculars/riak-ts-aarhus-demo.git
 
 cd riak-ts-aarhus-demo
 
-echo "Setting up virtualenv"
-virtualenv .
+#echo "Setting up virtualenv"
+#virtualenv .
 
-source ./bin/activate
+#source ./bin/activate
 
 echo "Installing requirements"
 pip install -r requirements.txt
